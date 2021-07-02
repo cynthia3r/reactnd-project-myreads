@@ -24,7 +24,7 @@ Note: When a book is on a bookshelf, it should have the same state on both the m
 ## Project dependencies
 
 react-scripts from npm registry is used to build, test and run MyReads app.
-Please refer dependencies and scripts section in package.json for more details.
+Please refer dependencies and scripts section in [`package.json`](package.json) for more details.
 
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
