@@ -1,52 +1,56 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Bookshelf from './Bookshelf';
 
+// Functional Component
+const ShowBookshelves = props => {
 
-class ShowBookshelves extends Component {
-    static propTypes = {
-        books: PropTypes.array.isRequired,
-        bookshelfChanger: PropTypes.func.isRequired
-    };
+    const { books, bookshelfChanger } = props;
+    
+    const bookshelfTypes = [
+        {
+            "bookshelfTitle": 'Currently Reading',
+            "bookshelfType": 'currentlyReading'
+        },
+        {
+            "bookshelfTitle": 'Want to read',
+            "bookshelfType": 'wantToRead'
+        },
+        {
+            "bookshelfTitle": 'Read',
+            "bookshelfType": 'read'
+        }
+    ];
 
-    // const bookshelfTypes = [
-    //     {"bookshelfTitle": 'Currently Reading', "bookshelfType": 'currentlyReading'},
-    //     {"bookshelfTitle": 'Want to read', "bookshelfType": 'wantToRead'},
-    //     {"bookshelfTitle": 'Read', "bookshelfType": 'read'}
-    // ];
-
-    render() {
-        // console.log(this.props.books);
-        const { books, bookshelfChanger } = this.props;
-        
-        return(
-            <div className="list-books-content">
-                <div>
-                    <Bookshelf
-                        bookshelfTitle = "Currently Reading"
-                        bookshelfChanger = {bookshelfChanger}
-                        booksInShelf = {books.filter(
-                            (book) => book.shelf === "currentlyReading"
-                        )}
-                    />
-                    <Bookshelf
-                        bookshelfTitle = "Want to read"
-                        bookshelfChanger = {bookshelfChanger}
-                        booksInShelf = {books.filter(
-                            (book) => book.shelf === "wantToRead"
-                        )}
-                    />
-                    <Bookshelf
-                        bookshelfTitle = "Read"
-                        bookshelfChanger = {bookshelfChanger}
-                        booksInShelf = {books.filter(
-                            (book) => book.shelf === "read"
-                        )}
-                    />
-                </div>
-            </div>
-        );
-    }
+    return(
+        <div className="list-books-content">
+            {
+                bookshelfTypes.map((bookShelf) => {
+                    const booksInShelf = books.filter(
+                        (book) => book.shelf === bookShelf.bookshelfType);
+                        return (
+                            <div className="bookshelf">
+                                <h2 className="bookshelf-title">
+                                    {bookShelf.bookshelfTitle}
+                                </h2>
+                                <div className="bookshelf-books">
+                                    <Bookshelf
+                                        books= {booksInShelf}
+                                        bookshelfChanger = {bookshelfChanger}
+                                    />
+                                </div>
+                            </div>          
+                        );
+                })  
+            }
+        </div>
+    );
 }
+
+ShowBookshelves.propTypes = {
+    books: PropTypes.array.isRequired,
+    bookshelfChanger: PropTypes.func.isRequired
+};
+
 
 export default ShowBookshelves;

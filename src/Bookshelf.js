@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Book from './Book';
 
 class Bookshelf extends Component {
+    
     static propTypes = {
         bookshelfTitle: PropTypes.string.isRequired,
         bookshelfChanger: PropTypes.func.isRequired,
@@ -11,23 +12,23 @@ class Bookshelf extends Component {
 
     render() {
         // console.log(this.props.booksInShelf);
-        const { bookshelfTitle, bookshelfChanger, booksInShelf } = this.props;
+        const { books, bookshelfChanger } = this.props;
         
         return (
-            <div className="bookshelf">
-                <h2 className="bookshelf-title">{bookshelfTitle}</h2>
-                <div className="bookshelf-books">
-                    <ol className="books-grid">{
-                        (booksInShelf.length > 0) &&
-                        (booksInShelf !== undefined) &&
-                        booksInShelf.map((book) => (
-                            <li key={book.id}>
-                                <Book key={book.id} book={book} books={booksInShelf} bookshelfChanger={bookshelfChanger}/>
-                            </li>
-                    ))}
-                    </ol>
-                </div>
-            </div>
+            <ol className="books-grid">{
+                (books.length > 0) &&
+                (books !== undefined) &&
+                books.map((book) => (
+                    <li key={book.id}>
+                        <Book
+                            key={book.id}
+                            book={book}
+                            books={books}
+                            bookshelfChanger={bookshelfChanger}
+                        />
+                    </li>
+                ))}
+            </ol>
         );
     }
 }
