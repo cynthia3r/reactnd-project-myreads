@@ -6,7 +6,7 @@ class Bookshelf extends Component {
     
     static propTypes = {
         bookshelfChanger: PropTypes.func.isRequired,
-        booksInShelf: PropTypes.array
+        books: PropTypes.array.isRequired
     };
 
     render() {
@@ -15,8 +15,8 @@ class Bookshelf extends Component {
         
         return (
             <ol className="books-grid">{
-                (books.length > 0) &&
                 (books !== undefined) &&
+                (books.length > 0) &&
                 books.map((book, idx) => (
                     <li key={book.id}>
                         <Book
