@@ -28,11 +28,11 @@ Please refer dependencies and scripts section in package.json for more details.
 
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
-* App should be accessable at `http://localhost:3000/`
+* MyReads frontend React App can be accessed via `http://localhost:3000/`
 
 Additional information:
-* project can be build with `npm build`
-* test scripts can be run using `npm test`
+* project can be build with `npm run build`
+* test scripts can be run using `npm run test`
 ## React application components overview
 
 * [`App.js`](src/App.js) : the Main App component of the MyReads application
