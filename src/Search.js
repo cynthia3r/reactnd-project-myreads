@@ -11,12 +11,12 @@ class Search extends Component {
     };
 
     state = {
-        searchQuery: '',
+        searchText: '',
         _books: []
     };
 
     searchBooks = (query) => {
-        this.setState({searchQuery: query});
+        this.setState({searchText: query});
 
         if(query) {
             BooksAPI.search(query.trim(), 20).then((books) => {
@@ -35,7 +35,7 @@ class Search extends Component {
     
     render() {
         // console.log(this.state._books);
-        const { searchQuery, _books} = this.state;
+        const { searchText, _books} = this.state;
         const { books, bookshelfChanger } = this.props;
 
         return (
@@ -55,7 +55,7 @@ class Search extends Component {
                         */}
                         <input 
                             type="text" 
-                            value = {searchQuery}
+                            value = {searchText}
                             onChange={(event) => this.searchBooks(event.target.value)}
                             placeholder="Search by title or author"
                         />

@@ -8,7 +8,7 @@ import './App.css';
 class BooksApp extends Component {
   state = {
     books: []
-  }
+  };
 
   componentDidMount() {
     // get list of books
@@ -39,9 +39,8 @@ class BooksApp extends Component {
    */
 
   render() {
-    // debug: view objects stored in books array
-    console.log(this.state.books);
-    
+    // view objects stored in books array
+    // console.log(this.state.books);
     const { books } = this.state;
 
     return(

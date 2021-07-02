@@ -18,6 +18,7 @@ class ShowBookshelves extends Component {
     render() {
         // console.log(this.props.books);
         const { books, bookshelfChanger } = this.props;
+        
         return(
             <div className="list-books-content">
                 <div>

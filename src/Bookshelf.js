@@ -10,8 +10,9 @@ class Bookshelf extends Component {
     };
 
     render() {
-        // console.log(this.props.books);
+        // console.log(this.props.booksInShelf);
         const { bookshelfTitle, bookshelfChanger, booksInShelf } = this.props;
+        
         return (
             <div className="bookshelf">
                 <h2 className="bookshelf-title">{bookshelfTitle}</h2>
@@ -21,7 +22,7 @@ class Bookshelf extends Component {
                         (booksInShelf !== undefined) &&
                         booksInShelf.map((book) => (
                             <li key={book.id}>
-                                <Book key={book.id} books={booksInShelf} book={book} bookshelfChanger={bookshelfChanger}/>
+                                <Book key={book.id} book={book} books={booksInShelf} bookshelfChanger={bookshelfChanger}/>
                             </li>
                     ))}
                     </ol>
