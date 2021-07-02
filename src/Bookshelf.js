@@ -5,9 +5,8 @@ import Book from './Book';
 class Bookshelf extends Component {
     
     static propTypes = {
-        bookshelfTitle: PropTypes.string.isRequired,
         bookshelfChanger: PropTypes.func.isRequired,
-        booksInShelf: PropTypes.array.isRequired
+        booksInShelf: PropTypes.array
     };
 
     render() {
@@ -18,10 +17,9 @@ class Bookshelf extends Component {
             <ol className="books-grid">{
                 (books.length > 0) &&
                 (books !== undefined) &&
-                books.map((book) => (
+                books.map((book, idx) => (
                     <li key={book.id}>
                         <Book
-                            key={book.id}
                             book={book}
                             books={books}
                             bookshelfChanger={bookshelfChanger}

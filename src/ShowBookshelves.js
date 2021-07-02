@@ -25,11 +25,11 @@ const ShowBookshelves = props => {
     return(
         <div className="list-books-content">
             {
-                bookshelfTypes.map((bookShelf) => {
+                bookshelfTypes.map((bookShelf, idx) => {
                     const booksInShelf = books.filter(
                         (book) => book.shelf === bookShelf.bookshelfType);
                         return (
-                            <div className="bookshelf">
+                            <div className="bookshelf" key={idx}>
                                 <h2 className="bookshelf-title">
                                     {bookShelf.bookshelfTitle}
                                 </h2>
