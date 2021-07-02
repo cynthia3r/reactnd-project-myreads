@@ -1,14 +1,14 @@
 # MyReads: A Book Tracking App
 
-MyReads is a web application that allows user to select and categorize books that they have read, are currently reading , or want to read.
+MyReads is a web application that allows user to select and categorize books that they have read, are currently reading, or want to read.
 
 ## App Functionality
 
 1. In this application, the main page displays a list of "shelves" (i.e. categories), each of which contains a number of books. The three shelves are:
 
-* Currently Reading
-* Want to Read
-* Read
+* **Currently Reading**
+* **Want to Read**
+* **Read**
 
 ![MyReads App Screen](src/screenshots/load_app_screen.png "app screen")
 
@@ -16,7 +16,7 @@ MyReads is a web application that allows user to select and categorize books tha
 
 ![Bookshelf Changer](src/screenshots/bookshelf_changer.png "bookshelf changer")
 
-3. The main page also has a link to /search, a search page that allows you to find books to add to your library. The search page also has a link to / (the root URL), which leads back to the main page.
+3. The main page also has a link to **/search**, a search page that allows you to find books to add to your library. The search page also has a link to **/ (the root URL)**, which leads back to the main page.
 When you navigate back to the main page from the search page, you should instantly see all of the selections you made on the search page in your library.
 Note: When a book is on a bookshelf, it should have the same state on both the main application page and the search page.
 
@@ -46,13 +46,13 @@ The data flow is unidirectional so the parent component which owns the state sha
 
 ## Backend Server
 
-The MyRead App leverages the [`BooksAPI.js`](utils/BooksAPI.js) which serves as a backend server 
+The MyRead App leverages the [`BooksAPI.js`](src/utils/BooksAPI.js) which serves as a backend server 
 and provies the following methods to perform necessary operations on the backend:
 
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
+* `getAll`
+* `update`
+* `search`
 
 ## Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
