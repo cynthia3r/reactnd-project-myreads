@@ -68,7 +68,12 @@ class Search extends Component {
                                     {
                                         _books.map((book) => (
                                             <li key={book.id}>
-                                                <Book key={book.id} book={book} books={books} bookshelfChanger={bookshelfChanger}/> 
+                                                <Book 
+                                                    key={book.id}
+                                                    book={book}
+                                                    books={books}
+                                                    bookshelfChanger={bookshelfChanger}
+                                                /> 
                                             </li>
                                             
                                         ))
