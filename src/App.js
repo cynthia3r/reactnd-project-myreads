@@ -10,12 +10,10 @@ class BooksApp extends Component {
     books: []
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     // get list of books
-    BooksAPI.getAll()
-    .then((books) => {
-      this.setState(() => ({books: books}));
-    })
+    const books = await BooksAPI.getAll();
+      this.setState({books});
   }
 
   bookshelfChanger = (_book, shelf) => {
@@ -45,7 +43,7 @@ class BooksApp extends Component {
 
     return(
       <div className="app">
-        <Route exact path ='/' render = {() => (
+        <Route exact path='/' render = {() => (
           <div className="list-books">
             <div className="list-books-title">
               <h1>MyReads</h1>
@@ -62,13 +60,12 @@ class BooksApp extends Component {
           </div>
         )}
         />
-        <Route exact path ='/search' render={() => (
+        <Route exact path='/search'>
           <Search
             books={books}
             bookshelfChanger={this.bookshelfChanger}
           />
-        )}
-        />
+        </Route>
       </div>
     );
   }
