@@ -53,6 +53,8 @@ and provies the following methods to perform necessary operations on the backend
 * `update`
 * `search`
 
+Note: Please refer the search keywords supported by backend server from [`SEARCH_TERMS.md`](SEARCH_TERMS.md)
+
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
